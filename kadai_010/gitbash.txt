@@ -1,0 +1,116 @@
+ogiha@ogiharanote MINGW64 ~/OneDrive/デスクトップ
+$ cd "C:\Users\ogiha\git_challenge"
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git checkout main
+M       hello_world.txt
+Already on 'main'
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git branch
+* main
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> main
+
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git add .
+warning: in the working copy of 'hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git commit -m "日本語訳を編集"
+[main 38a5027] 日本語訳を編集
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git remote add origin git@github.com:ogihara0833/git_challenge.git
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git push -u origin main
+Enter passphrase for key '/c/Users/ogiha/.ssh/id_rsa':
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (9/9), 839 bytes | 209.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:ogihara0833/git_challenge.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git branch
+* main
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git checkout -b pull_request
+Switched to a new branch 'pull_request'
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git branch
+  main
+* pull_request
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git push origin pull_request
+Enter passphrase for key '/c/Users/ogiha/.ssh/id_rsa':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'pull_request' on GitHub by visiting:
+remote:      https://github.com/ogihara0833/git_challenge/pull/new/pull_request
+remote:
+To github.com:ogihara0833/git_challenge.git
+ * [new branch]      pull_request -> pull_request
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ echo "こんばんは、世界！" >> hello_world.txt
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git add .
+warning: in the working copy of 'hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git commit -m "日本語訳を編集！"
+[pull_request 4702c7f] 日本語訳を編集！
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git push origin pull_request
+Enter passphrase for key '/c/Users/ogiha/.ssh/id_rsa':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:ogihara0833/git_challenge.git
+   38a5027..4702c7f  pull_request -> pull_request
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git branch -D pull_request
+error: cannot delete branch 'pull_request' used by worktree at 'C:/Users/ogiha/git_challenge'
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git branch
+  main
+* pull_request
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (pull_request)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$ git branch -D pull_request
+Deleted branch pull_request (was 4702c7f).
+
+ogiha@ogiharanote MINGW64 ~/git_challenge (main)
+$
